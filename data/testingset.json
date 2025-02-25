@@ -1,0 +1,17 @@
+[
+    {
+        "question": "What are the best exercises for tennis elbow?",
+        "contexts": [
+            "Tennis elbow graded exercise protocol...",
+            "Manual therapy review..."
+        ],
+        "expected_answer": "Eccentric exercises and stretching reduce symptoms."
+    },
+    {
+        "question": "What is the role of manual therapy in treating elbow injuries?",
+        "contexts": [
+            "Research shows that manual therapy combined with exercise is beneficial."
+        ],
+        "expected_answer": "Manual therapy improves range of motion and reduces pain."
+    }
+]

@@ -1,0 +1,20 @@
+[project]
+name = "src-midterm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "chainlit>=2.2.1",
+    "langchain-community>=0.3.17",
+    "langchain-core>=0.3.35",
+    "langchain-openai>=0.3.6",
+    "langchain-qdrant>=0.2.0",
+    "langchain-text-splitters>=0.3.6",
+    "langgraph>=0.2.73",
+    "nest-asyncio>=1.6.0",
+    "pydantic>=2.10.6",
+    "pypdf>=5.3.0",
+    "tavily-python>=0.5.1",
+    "uuid7>=0.1.0",
+]
