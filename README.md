@@ -134,7 +134,26 @@ E0000 00:00:1740504494.158842    2656 init.cc:232] grpc_wait_for_shutdown_with_t
 
 - RAGAS seems great for evaluating different prompts, especially during the initial build of a project. However, once you move beyond an in-memory database, modifying embeddings becomes a challenge. Since I'm using Qdrant Cloud, I would need to continuously reload my data whenever embeddings change, which isn't practical at scale. If you have a large dataset, managing this process efficiently would be difficult. While I understand the purpose of in-memory databases, I don't think most organizations would run production systems that way.
 
-## Task 6:  TBD
+## Task 6:  
+- here is the link for my embedding model on HF: https://huggingface.co/spaces/shivXy/otmidterm  The code to create the embedding model is located under the fine tuning project.  It has two files one that creates the datasets from the data and the other that creates the model using the data from the jsonl file that were created from the first step.
+val_cosine_mrr@10': 0.9772727272727273, 'eval_cosine_map@100': np.float64(0.9772727272727273), 'eval_runtime': 2.4199, 'eval_samples_per_second': 0.0, 'eval_steps_per_second': 0.0, 'epoch': 9.76}
+{'train_runtime': 7547.7103, 'train_samples_per_second': 1.076, 'train_steps_per_second': 0.109, 'train_loss': 0.4309439752160049, 'epoch': 10.0}
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 820/820 [2:05:47<00:00,  9.20s/it]
+model.safetensors: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1.34G/1.34G [00:53<00:00, 25.1MB/s]
+
+- results from adding the is a bust after waiting 2 hours for the model to process.  when I add it to the embeddings the Qdrant model was trained on a different embedding model.
+{"status":{"error":"Wrong input: Vector dimension error: expected dim: 1536, got 1024"},"time":0.000353145}'
+code changes to add the HF model to the app:
+access_token = os.getenv("HUGGING_FACE_TOKEN")
+
+# Load OpenAI Model
+llm = ChatOpenAI(model="gpt-4o-mini")
+model = SentenceTransformer("shivXy/ot-midterm-v0")
+
+
+EVALUATION_MODE = os.getenv("EVALUATION_MODE", "false").lower() == "true"
+
+embedding_model = OpenAIEmbeddings(model="text-embedding-3-small")
 
 
 ## Task 7: 
