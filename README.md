@@ -1,5 +1,14 @@
 # AIE5_Midterm
 
+Links for turn in:
+https://www.loom.com/share/8f4efe7f4fd647fc8bb3ed0353f794ac
+
+https://huggingface.co/shivXy/ot-midterm-v0
+
+https://huggingface.co/spaces/shivXy/otmidterm
+
+https://github.com/xascendent/otmidterm
+
 Location of docs that I will use for my vector store:
 https://journals.lww.com/iopt/fulltext/2018/50040/effect_of_hand_splinting_versus_stretching.5.aspx
 
