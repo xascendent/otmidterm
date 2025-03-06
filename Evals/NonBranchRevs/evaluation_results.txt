@@ -1,0 +1,7 @@
+'Model Used': 'gpt-3.5-turbo' Embeddings Model Used': 'text-embedding-3-small' 'RESULTS':{'faithfulness': 0.5753, 'factual_correctness': 0.2845, 'answer_relevancy': 0.3537, 'context_entity_recall': 0.4855}
+'Model Used': 'gpt-4o' Embeddings Model Used': 'text-embedding-3-small' 'RESULTS':{'faithfulness': 0.8829, 'factual_correctness': 0.4182, 'answer_relevancy': 0.9844, 'context_entity_recall': 0.0790}
+'Model Used': 'gpt-3.5-turbo' Embeddings Model Used': 'text-embedding-3-large' 'RESULTS':{'faithfulness': 0.8409, 'factual_correctness': 0.4327, 'answer_relevancy': 0.5341, 'context_entity_recall': 0.2617}
+'Model Used': 'gpt-4o' Embeddings Model Used': 'text-embedding-3-large' 'RESULTS':{'faithfulness': 0.8605, 'factual_correctness': 0.5255, 'answer_relevancy': 0.8948, 'context_entity_recall': 0.0769}
+'Model Used': 'gpt-4o' 'Embeddings Model Used': 'huggingface/shivXy/ot-midterm-v0' 'RESULTS':{'faithfulness': 0.8690, 'factual_correctness': 0.5667, 'answer_relevancy': 0.7774, 'context_entity_recall': 0.2458}
+'Model Used': 'gpt-3.5-turbo' 'Embeddings Model Used': 'huggingface/shivXy/ot-midterm-v0' 'RESULTS':{'faithfulness': 0.8333, 'factual_correctness': 0.4017, 'answer_relevancy': 0.3178, 'context_entity_recall': 0.4026}
+'Model Used': 'gpt-4o' 'Embeddings Model Used': 'huggingface/shivXy/ot-midterm-v0' 'RESULTS':{'faithfulness': 0.9481, 'factual_correctness': 0.6867, 'answer_relevancy': 0.7792, 'context_entity_recall': 0.1602}
