@@ -49,6 +49,64 @@ powershell commands:
 
 ---
 
+## MIDTERM CORRECTIONS:
+Task 2: Where will you use an agent or agents?  What will you use “agentic reasoning” for in your app?
+`Answer`: The agentic part comes from the way the system is designed to take actions based on intermediate reasoning steps rather than just retrieving documents and passing them to the model.  You will see this in the nodes
+and the steps they take from looking at user input, document results, etc.
+
+Task 3: [Optional] Will you need specific data for any other part of your application?   If so, explain.
+`Answer`: I pull specific data from Journal of Hand Therapy
+
+Task 4: "Consider making your prototype generic. It was not able to give answers to other questions, and it always gave multiple lines for a list of predefined sections.
+
+e.g question - How do hand splinting and stretching exercises compare in their effectiveness at reducing spasticity and improving hand function in poststroke patients?"
+
+`Answer`: I have removed all the RAGAS code since this task is better suited in other areas.  Thus simplifiy the code.  I also made the code to where you can ask other types of questions such as tell me a joke 
+and it will not try to format everything.  It will only try to format if the LLM thinks that the question is an OT question.  You can find the updated space here: https://huggingface.co/spaces/shivXy/midtermfixes
+
+
+Task 5: Creating a Golden Test Data Set
+`Answer`: I have created a new py file that does all the evals for RAGAS and LANGSMITH.  I evaluated multiple LLMs with different embeddings including my own embedding which can be found here: https://huggingface.co/shivXy/ot-midterm-v0  the new code to do the evals can be found here: https://github.com/xascendent/otmidterm/tree/main/Evals  you will find the langsmith screenshot.  but the RAGAS metrics 
+that are being looked for are saved out to a file for each run / appened.  here is a break out of all the models and embeddings used:
+'Model Used': 'gpt-3.5-turbo' Embeddings Model Used': 'text-embedding-3-small' 'RESULTS':{'faithfulness': 0.5753, 'factual_correctness': 0.2845, 'answer_relevancy': 0.3537, 'context_entity_recall': 0.4855}
+'Model Used': 'gpt-4o' Embeddings Model Used': 'text-embedding-3-small' 'RESULTS':{'faithfulness': 0.8829, 'factual_correctness': 0.4182, 'answer_relevancy': 0.9844, 'context_entity_recall': 0.0790}
+'Model Used': 'gpt-3.5-turbo' Embeddings Model Used': 'text-embedding-3-large' 'RESULTS':{'faithfulness': 0.8409, 'factual_correctness': 0.4327, 'answer_relevancy': 0.5341, 'context_entity_recall': 0.2617}
+'Model Used': 'gpt-4o' Embeddings Model Used': 'text-embedding-3-large' 'RESULTS':{'faithfulness': 0.8605, 'factual_correctness': 0.5255, 'answer_relevancy': 0.8948, 'context_entity_recall': 0.0769}
+'Model Used': 'gpt-4o' 'Embeddings Model Used': 'huggingface/shivXy/ot-midterm-v0' 'RESULTS':{'faithfulness': 0.8690, 'factual_correctness': 0.5667, 'answer_relevancy': 0.7774, 'context_entity_recall': 0.2458}
+'Model Used': 'gpt-3.5-turbo' 'Embeddings Model Used': 'huggingface/shivXy/ot-midterm-v0' 'RESULTS':{'faithfulness': 0.8333, 'factual_correctness': 0.4017, 'answer_relevancy': 0.3178, 'context_entity_recall': 0.4026}
+'Model Used': 'gpt-4o' 'Embeddings Model Used': 'huggingface/shivXy/ot-midterm-v0' 'RESULTS':{'faithfulness': 0.9481, 'factual_correctness': 0.6867, 'answer_relevancy': 0.7792, 'context_entity_recall': 0.1602}
+
+What conclusions can you draw about the performance and effectiveness of your pipeline with this information?
+`Answer`: As you can see from this chart and the langsmith i went with the custom hugging face for my qdrant embeddings.  I'm still using qdrant cloud for my datastore.
+
+
+Task 6: Fine-Tuning Open-Source Embeddings
+
+`Answer`: https://huggingface.co/shivXy/ot-midterm-v0  You can see the metrics above and I used this for my final embedding with gtp-4o
+
+Task 6: Assessing Performance
+Question: How does the performance compare to your original RAG application? Test the fine-tuned embedding model using the RAGAS frameworks to quantify any improvements. Provide results in a table.
+`Answer`: The performance due to all the calls is slow and costly.  But the data accuracy is much higher based on my tunings and deployment.  You can see the results from task 5.
+
+Quetion: Articulate the changes that you expect to make to your app in the second half of the course. How will you improve your application?
+`Answer`: The second half of the course I would love to see if I could get this out of the OPENAI ecosystem.  The bills are pretty high with all of the debugging/testing cycles.  I'm hopeful that will perform at around the
+same levels or close to.  At least I will ahve the golden py file that I can swap in and out models for testing.
+
+
+Task FINAL: 
+New Loom video I will just go over the changes that was made to the application.  The old loom video overall work flow is still relevant.  New loom video link:
+Public Github Repo : https://github.com/xascendent/otmidterm
+Public Github Repo / RAGAS / EVALS : https://github.com/xascendent/otmidterm/tree/main/Evals  NonBranchRevs are multiple tries of the project until I was able to get golden4.py 
+Public Github REPO New App : https://github.com/xascendent/otmidterm/blob/main/app.py
+Public Github REPO Custom model: https://github.com/xascendent/otmidterm/tree/main/fine%20tuning%20project
+Public Github REPO First Project attempt: https://github.com/xascendent/otmidterm/tree/main/Real%20project  (this is my first attempt at the project but HF doesn't like multiple py files etc. had to start over)
+
+A written document addressing each deliverable and answering each question: This file has all corrections and all answered questions from below.  I figured that you wanted me to answer you the areas that needed corrections 
+thus I will leave the below task/questions/answers the same and just address what was asked for.
+
+Hugging Face: https://huggingface.co/shivXy/ot-midterm-v0  embedding model 
+Hugging Face: https://huggingface.co/spaces/shivXy/midtermfixes  new app 
+
 ## Task 1: 
 
 **Problem Statement:**  
