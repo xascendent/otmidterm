@@ -50,15 +50,18 @@ powershell commands:
 ---
 
 ## MIDTERM CORRECTIONS:
+MIDTERM CORRECTIONS LOOM VIDEO: https://www.loom.com/share/edb16431342d42769eda33ce7ba0b43f
+
 Task 2: Where will you use an agent or agents?  What will you use “agentic reasoning” for in your app?
+
 `Answer`: The agentic part comes from the way the system is designed to take actions based on intermediate reasoning steps rather than just retrieving documents and passing them to the model.  You will see this in the nodes
 and the steps they take from looking at user input, document results, etc.
 
 Task 3: [Optional] Will you need specific data for any other part of your application?   If so, explain.
+
 `Answer`: I pull specific data from Journal of Hand Therapy
 
 Task 4: "Consider making your prototype generic. It was not able to give answers to other questions, and it always gave multiple lines for a list of predefined sections.
-
 e.g question - How do hand splinting and stretching exercises compare in their effectiveness at reducing spasticity and improving hand function in poststroke patients?"
 
 `Answer`: I have removed all the RAGAS code since this task is better suited in other areas.  Thus simplifiy the code.  I also made the code to where you can ask other types of questions such as tell me a joke 
@@ -66,6 +69,7 @@ and it will not try to format everything.  It will only try to format if the LLM
 
 
 Task 5: Creating a Golden Test Data Set
+
 `Answer`: I have created a new py file that does all the evals for RAGAS and LANGSMITH.  I evaluated multiple LLMs with different embeddings including my own embedding which can be found here: https://huggingface.co/shivXy/ot-midterm-v0  the new code to do the evals can be found here: https://github.com/xascendent/otmidterm/tree/main/Evals  you will find the langsmith screenshot.  but the RAGAS metrics 
 that are being looked for are saved out to a file for each run / appened.  here is a break out of all the models and embeddings used:
 'Model Used': 'gpt-3.5-turbo' Embeddings Model Used': 'text-embedding-3-small' 'RESULTS':{'faithfulness': 0.5753, 'factual_correctness': 0.2845, 'answer_relevancy': 0.3537, 'context_entity_recall': 0.4855}
@@ -77,6 +81,7 @@ that are being looked for are saved out to a file for each run / appened.  here 
 'Model Used': 'gpt-4o' 'Embeddings Model Used': 'huggingface/shivXy/ot-midterm-v0' 'RESULTS':{'faithfulness': 0.9481, 'factual_correctness': 0.6867, 'answer_relevancy': 0.7792, 'context_entity_recall': 0.1602}
 
 What conclusions can you draw about the performance and effectiveness of your pipeline with this information?
+
 `Answer`: As you can see from this chart and the langsmith i went with the custom hugging face for my qdrant embeddings.  I'm still using qdrant cloud for my datastore.
 
 
